@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Block Grid</title>
+</head>
+<body>
+    <style>
+        body, html{height: 100%; padding: 0; margin: 0; box-sizing: border-box; font-family: 'Lucida Sans', sans-serif;}
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .grid{
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            background-color: rgb(225, 225, 225);
+        }
+
+        .header{
+            grid-area: 1/1/2/11;
+        }
+
+
+        .main{
+            grid-area: 2/1/10/10;
+        }
+
+
+        .aside{
+            grid-area: 2/10/10/11;
+        }
+
+
+        .footer{
+            grid-area: 10/1/11/11;
+        }
+
+        .header{
+            background-color: rgb(51, 51, 51);
+            color: white;
+            display: flex;
+            align-items: center;
+            padding-left: 50px;
+            font-weight: 700;
+        }
+
+        .aside{
+            outline: 4px solid rgb(51, 51, 51);
+            font-weight: 700;
+        }
+
+        .aside a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 25%;
+            text-decoration: none;
+            background-color: rgb(225, 225, 225);
+            color: rgb(51, 51, 51);
+        }
+
+        .aside a:hover{
+            filter: brightness(80%);
+            transition: filter .1s ease;
+        }
+
+        .footer{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(51, 51, 51);
+            color: white;
+        }
+
+        .footer a{
+            color: lightblue;
+        }
+        
+        .main{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .main h1{
+            width: 80%;
+            margin-left: 40px;
+            border-bottom: 1px solid rgb(51, 51, 51);
+            text-align: center; 
+        }
+
+        .card{
+            width: 25%;
+            position: relative;
+            bottom: 30px;
+            height: 65%;
+            border: 1px solid black;
+            border-radius: 20px;
+            box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.25);
+            background-color: white;
+        }
+
+        .card:hover{
+            transform: scale(1.1);
+            transition: transform .1s ease;
+            cursor: pointer;
+        }
+
+        .card h6, .card h3, .card p, .card a{
+            text-align: justify;
+            margin: 15px;
+        }
+
+        .card img{
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+
+    </style>
+    <div class="grid">
+        <div class="header">
+            <p>SEU SITE DE NOTÍCIAS 100% REAL</p>
+        </div>
+        <div class="main">
+            <h1>Notícias quentes</h1>
+            <div class="card">
+                <img src="https://arquivo.devmedia.com.br/marketing/img/curso-curso-de-html-basico-371.png" alt="">
+                <h3>Bruno se identifica como HTMLssexual</h3>
+                <h6>Postado dia 11/04</h6>
+                <p>"Só namoro quem sabe o que é flex" - Bruno afirma após entrevista com profissional em frontend</p>
+                <a href="#">Ver mais</a>
+            </div>
+            <div class="card">
+                <img src="https://portalpopline.com.br/wp-content/uploads/2021/08/disco-ouro-streaming-758x570.jpg" alt="">
+                <h3>Djeniffer ganha prêmio de melhor DJ do ano</h3>
+                <h6>Postado dia 09/04</h6>
+                <p>"O segredo está no nome" - diz entrevistada em Miami - USA junto com astros como Marshmello e Alok   </p>
+                <a href="#">Ver mais</a>
+            </div>
+            <div class="card">
+                <img src="https://cdn6.campograndenews.com.br/uploads/noticias/2020/03/10/24tb9qiqf2lck.jpg" alt="">
+                <h3>Rafael morre em acidente de carro</h3>
+                <h6>Postado dia 01/04</h6>
+                <p>Motorista ganha prêmio pela façanha, mas continua preso no condomínio Minas Concentradas</p>
+                <a href="#">Ver mais</a>
+            </div>
+        </div>
+        <div class="aside">
+            <a href="#">Início</a>
+            <a href="#">Categorias</a>
+            <a href="#">Opções</a>
+            <a href="#">FAQ</a>
+        </div>
+        <div class="footer">
+            <p>Todos os direitos reservados, <a href="#">saiba mais</a></p>
+        </div>
+    </div>
+</body>
+</html>
